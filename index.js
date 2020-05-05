@@ -1,6 +1,8 @@
-const express = require("express");
-const app = express();
-const http = require("http").Server(app);
+const cors = require('cors')
+const express = require('express')
+const app = (express()).use(cors())
+const http = require("http").Server(app)
+
 let port = process.env.PORT || 3737;
 const { generateNames } = require('./core/nameGen')
 
