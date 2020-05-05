@@ -5,7 +5,7 @@ setup:
 ``npm install``
 
 run:
-``npm run start`` OR ``node index.js``
+``npm run start`` OR ``node index``
 
 Runs on port 3737
 
