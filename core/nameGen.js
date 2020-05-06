@@ -20,13 +20,11 @@ const _loadFactionList = (factionName) => JSON.parse(fs.readFileSync(`./namelist
 const _getRandomArrayItem = (array) => array[Math.floor(Math.random() * array.length)]
 
 // Create a single name based on the 'desiredOutput' field in the nameList JSON
-const _createNameFromList = (nameList) => {
-  let name = ''
-  nameList.desiredOutput.map((part) => {
-    name += _getRandomArrayItem(nameList[part])
-  })
-  return name
-}
+const _createNameFromList = (nameList) =>
+	nameList.desiredOutput
+		.map((part) => nameList[part])
+		.map(_getRandomArrayItem)
+		.join('');
 
 // create an array containing X names based on nameList
 const _createNameArray = (nameList, amount) => {
